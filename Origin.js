@@ -1,8 +1,8 @@
 class Origin {
   getInfo() {
     return {
-      id: 'asyncexample',
-      name: 'Async Blocks',
+      id: 'origin',
+      name: 'Origin Utils',
       blocks: [
         {
           opcode: 'wait',
