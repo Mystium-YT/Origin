@@ -24,8 +24,7 @@ class Origin {
   }
 
   split (args) {
-    entryArray = args.TEXT.split(args.SPLITCHAR)
-    return entryArray
+    return (args.TEXT).split(args.SPLITCHAR)
   }
 }
 
