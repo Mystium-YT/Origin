@@ -16,17 +16,17 @@ class Origin {
           }
         },
         {
-            opcode: 'destring',
-            text: 'destring([TEXT])',
-            blockType: Scratch.BlockType.REPORTER,
-            arguments: {
-              TEXT: {
-                type: Scratch.ArgumentType.STRING,
-                defaultValue: '"Hello"'
-              }
+          opcode: 'destring',
+          text: 'destring([TEXT])',
+          blockType: Scratch.BlockType.REPORTER,
+          arguments: {
+            TEXT: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: '"Hello"'
             }
           }
         }
+
       ]
     }
   }
@@ -36,7 +36,7 @@ class Origin {
   }
 
   destring (args) {
-    if (args.TEXT[1] === '"' && args.TEXT[args.TEXT.length] === '"') { return args.TEXT.slice(2 , args.TEXT.length - 1) } else { return args.TEXT }
+    if (args.TEXT[1] === '"' && args.TEXT[args.TEXT.length] === '"') { return args.TEXT.slice(2, args.TEXT.length - 1) } else { return args.TEXT }
   }
 }
 
