@@ -13,7 +13,9 @@ class Origin {
               type: Scratch.ArgumentType.STRING,
               defaultValue: 1
             }
-          },
+          }
+        },
+        {
             opcode: 'destring',
             text: 'destring([TEXT])',
             blockType: Scratch.BlockType.REPORTER,
