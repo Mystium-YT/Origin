@@ -5,17 +5,22 @@ class Origin {
       name: 'Origin Utils',
       blocks: [
         {
-          opcode: 'split',
-          text: 'split [TEXT] by [SPLITCHAR]',
+          opcode: 'str',
+          text: 'str([TEXT])',
           blockType: Scratch.BlockType.REPORTER,
           arguments: {
             TEXT: {
               type: Scratch.ArgumentType.STRING,
               defaultValue: 1
             },
-            SPLITCHAR: {
-              type: Scratch.ArgumentType.STRING,
-              defaultValue: 1
+            opcode: 'destring',
+            text: 'destring([TEXT])',
+            blockType: Scratch.BlockType.REPORTER,
+            arguments: {
+              TEXT: {
+                type: Scratch.ArgumentType.STRING,
+                defaultValue: '"Hello"'
+              }
             }
           }
         }
@@ -23,9 +28,14 @@ class Origin {
     }
   }
 
-  split (args) {
-    return (args.TEXT).split(args.SPLITCHAR)
+  str (args) {
+    return '"' + args.TEXT + '"'
+  }
+
+  destring (args) {
+    if (args.TEXT[1] === '"' && args.TEXT[args.TEXT.length]) { return args.TEXT } else { return 'not a string' }
   }
 }
 
 Scratch.extensions.register(new Origin())
+
