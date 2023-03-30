@@ -33,11 +33,11 @@ class Origin {
 
   str (args) {
     return '"' + args.TEXT + '"'
-  }
+  };
 
   destring (args) {
     if (args.TEXT[1] === '"' && args.TEXT[args.TEXT.length] === '"') { return args.TEXT.slice(2, args.TEXT.length - 1) } else { return args.TEXT }
-  }
+  };
 }
 
 Scratch.extensions.register(new Origin())
