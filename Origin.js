@@ -12,7 +12,8 @@ class Origin {
             TEXT: {
               type: Scratch.ArgumentType.STRING,
               defaultValue: 1
-            },
+            }
+          },
             opcode: 'destring',
             text: 'destring([TEXT])',
             blockType: Scratch.BlockType.REPORTER,
@@ -33,9 +34,8 @@ class Origin {
   }
 
   destring (args) {
-    if (args.TEXT[1] === '"' && args.TEXT[args.TEXT.length]) { return args.TEXT } else { return 'not a string' }
+    if (args.TEXT[1] === '"' && args.TEXT[args.TEXT.length] === '"') { return args.TEXT.slice(2 , args.TEXT.length - 1) } else { return args.TEXT }
   }
 }
 
 Scratch.extensions.register(new Origin())
-
